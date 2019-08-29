@@ -316,6 +316,7 @@
     <string name="search_engine_baidu">Baidu</string>
     <string name="search_engine_yandex">Yandex</string>
     <string name="search_engine_naver">Naver</string>
+    <string name="search_ocean_hero">OceanHero</string>
 
     <!-- Notifications -->
     <plurals name="notification_incognito_running_title">
