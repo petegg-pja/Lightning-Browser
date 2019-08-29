@@ -25,7 +25,8 @@ class SearchEngineProvider @Inject constructor(
     /**
      * Provide the [SuggestionsRepository] that maps to the user's current preference.
      */
-    fun provideSearchSuggestions(): SuggestionsRepository =
+    fun provideSearchSuggestions(): SuggestionsRepository = OceanHeroSuggestionsModel(okHttpClient, requestFactory, application, logger)
+ /*
         when (userPreferences.searchSuggestionChoice) {
             0 -> NoOpSuggestionsRepository()
             1 -> GoogleSuggestionsModel(okHttpClient, requestFactory, application, logger)
@@ -34,11 +35,12 @@ class SearchEngineProvider @Inject constructor(
             4 -> NaverSuggestionsModel(okHttpClient, requestFactory, application, logger)
             else -> GoogleSuggestionsModel(okHttpClient, requestFactory, application, logger)
         }
-
+*/
     /**
      * Provide the [BaseSearchEngine] that maps to the user's current preference.
      */
-    fun provideSearchEngine(): BaseSearchEngine =
+    fun provideSearchEngine(): BaseSearchEngine = OceanHeroSearch()
+ /*
         when (userPreferences.searchChoice) {
             0 -> CustomSearch(userPreferences.searchUrl)
             1 -> GoogleSearch()
@@ -54,7 +56,7 @@ class SearchEngineProvider @Inject constructor(
             11 -> NaverSearch()
             else -> GoogleSearch()
         }
-
+*/
     /**
      * Return the serializable index of of the provided [BaseSearchEngine].
      */
@@ -79,7 +81,8 @@ class SearchEngineProvider @Inject constructor(
      * Provide a list of all supported search engines.
      */
     fun provideAllSearchEngines(): List<BaseSearchEngine> = listOf(
-        CustomSearch(userPreferences.searchUrl),
+          OceanHeroSearch()
+            /*CustomSearch(userPreferences.searchUrl),
         GoogleSearch(),
         AskSearch(),
         BingSearch(),
@@ -91,6 +94,7 @@ class SearchEngineProvider @Inject constructor(
         BaiduSearch(),
         YandexSearch(),
         NaverSearch()
+        */
     )
 
 }
