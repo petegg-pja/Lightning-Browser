@@ -100,7 +100,7 @@
     <string name="action_manual">手动</string>
     <string name="action_auto">自动</string>
     <string name="action_follow_me">联系我</string>
-    <string name="url_twitter">twitter.com/ACRDevelopment</string>
+    <string name="url_twitter">https://oceanhero.zendesk.com/hc/en-us/requests/new</string>
     <string name="clear_cache">清理缓存</string>
     <string name="message_cache_cleared">缓存已清理</string>
     <string name="message_import">书签已导入</string>
