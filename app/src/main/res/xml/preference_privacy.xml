@@ -55,5 +55,10 @@
         <Preference
             android:key="clear_webstorage"
             android:title="@string/clear_web_storage"/>
+        <Preference android:title="@string/privacePolicy" >
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://about.oceanhero.today/privacy-policy" />
+        </Preference>
     </PreferenceCategory>
+
 </PreferenceScreen>

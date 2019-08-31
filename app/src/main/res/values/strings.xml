@@ -330,4 +330,5 @@
     <string name="ad_block_load_failure">Failed to load hosts from ad blocking source.</string>
 
     <string name="infinity">∞</string>
+    <string name="privacePolicy">Privacy policy</string>
 </resources>
