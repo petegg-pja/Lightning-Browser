@@ -68,18 +68,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             onClick = this::showHomePageDialog
         )
 
-        clickableDynamicPreference(
-            preference = SETTINGS_SEARCH_ENGINE,
-            summary = getSearchEngineSummary(searchEngineProvider.provideSearchEngine()),
-            onClick = this::showSearchProviderDialog
-        )
-
-        clickableDynamicPreference(
-            preference = SETTINGS_SUGGESTIONS,
-            summary = searchSuggestionChoiceToTitle(Suggestions.from(userPreferences.searchSuggestionChoice)),
-            onClick = this::showSearchSuggestionsDialog
-        )
-
         checkBoxPreference(
             preference = SETTINGS_IMAGES,
             isChecked = userPreferences.blockImagesEnabled,
@@ -441,7 +429,5 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         private const val SETTINGS_USER_AGENT = "agent"
         private const val SETTINGS_DOWNLOAD = "download"
         private const val SETTINGS_HOME = "home"
-        private const val SETTINGS_SEARCH_ENGINE = "search"
-        private const val SETTINGS_SUGGESTIONS = "suggestions_choice"
     }
 }
