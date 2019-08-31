@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
-        <acr.browser.lightning.icon.TabCountView
+        <com.oceanhero.search.icon.TabCountView
             android:id="@+id/tab_count_view"
             android:layout_width="24dp"
             android:layout_height="24dp"
