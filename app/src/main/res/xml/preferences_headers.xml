@@ -27,7 +27,7 @@
         android:title="@string/faq">
         <intent
             android:action="android.intent.action.VIEW"
-            android:data="http://acrdevelopment.org/lightning/faq">
+            android:data="https://oceanhero.zendesk.com">
             <extra
                 android:name="SOURCE"
                 android:value="SELF"/>
