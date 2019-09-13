@@ -42,6 +42,7 @@ import android.app.Activity
 import android.app.NotificationManager
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
@@ -965,7 +966,17 @@ abstract class BrowserActivity : ThemableBrowserActivity(), BrowserView, UIContr
         // Use a delayed handler to make the transition smooth
         // otherwise it will get caught up with the showTab code
         // and cause a janky motion
-        mainHandler.postDelayed(drawer_layout::closeDrawers, 200)
+        mainHandler.postDelayed({
+            drawer_layout.closeDrawers()
+            showKeyboard(view)
+        }, 200)
+    }
+
+    private fun showKeyboard(viewToFocus: View?) {
+        viewToFocus?.let {
+            val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.showSoftInput(it, InputMethodManager.HIDE_NOT_ALWAYS)
+        }
     }
 
     override fun showBlockedLocalFileDialog(onPositiveClick: Function0<Unit>) =
